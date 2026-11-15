@@ -20,7 +20,7 @@ export function Header() {
           : <><a href={tel}>● Dyżur 24/7 · {PHONE}</a><span>·</span><span>ul. Rydlówka 20</span><span>·</span><span>Jedziesz? Zadzwoń z drogi, przygotujemy stół</span></>}
       </div></div>
       <header className={`nav${open ? ' open' : ''}`}><div className="wrap">
-        <a className="logo" href={href('/')} aria-label="Karta, strona główna"><b>Karta</b><span>KLINIKA WETERYNARYJNA · KRAKÓW · OD 1998</span></a>
+        <a className="logo" href={href('/')} aria-label="Karta, strona główna"><b>Karta</b></a>
         <nav aria-label="Główna"><ul>{NAV.map(([p, l]) => <li key={p}><a className={p === '/pilne/' ? 'urgent' : undefined} href={href(p)} aria-current={path.startsWith(p.slice(0, -1)) ? 'page' : undefined}>{l}</a></li>)}</ul></nav>
         <Lang />
         <a className="btn b-ink" href={href('/kontakt/#wizyta')}>Umów wizytę</a>
