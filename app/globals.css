@@ -240,3 +240,22 @@ h2,.h2{font-size:clamp(26px,min(3.5vw,6.8vh),56px)}
 
 .light .chip{color:var(--ink);border-color:var(--ink)}.light .chip[aria-pressed=true]{background:var(--ink);color:var(--card)}
 @media (max-height:700px) and (min-width:761px){.board~.note{display:none}}
+
+.input::placeholder{color:#A8A296;font-style:italic;opacity:1}
+.np-ph{aspect-ratio:16/9;display:grid;place-items:center;border:1.5px dashed #CFC6B4;color:#A8A296;font-family:var(--mono,monospace);font-size:12px;letter-spacing:.04em}
+.np-hint{color:#A8A296;font-style:italic}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+.bscroll{position:relative}
+.bscroll .board{grid-auto-columns:calc((100% - 72px)/4);scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent)}
+.bscroll .board::-webkit-scrollbar{display:none}
+.bscroll .board.at-end{-webkit-mask-image:none;mask-image:none}
+.bctl{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-top:4px}
+.bctl .m{margin-right:8px}
+.bctl button{width:40px;height:40px;border-radius:50%;border:1px solid var(--ink);background:none;cursor:pointer;font-size:16px}
+.bctl button:disabled{opacity:.25;cursor:default}
+.bctl button:not(:disabled):hover{background:var(--ink);color:var(--card,#fff)}
+
+.team4{gap:clamp(12px,1.6vw,22px)}
+.team4 .ph{height:calc(100svh - 120px - 330px)!important;min-height:200px;max-height:380px!important}
+.team4 h3{font-size:clamp(19px,2.6vh,23px)!important;margin-top:10px!important}

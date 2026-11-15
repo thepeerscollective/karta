@@ -1,4 +1,5 @@
 import { Field, Img, KCard, Stamp } from '@/components/ui';
+import BoardScroll from '@/components/BoardScroll';
 import { DISCHARGED, SERVICES, TEAM } from '@/lib/data';
 import { PHONE, href } from '@/lib/base';
 
@@ -24,9 +25,11 @@ export default function Home() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}><Field k="Wiek" v="7 lat" size={22} /><Field k="Waga" v="11,4 kg" size={22} /></div>
               </div>
             </div>
-                        <span className="m" style={{ display: 'block', marginTop: 20 }}>Uwagi</span>
-            <p className="note" style={{ marginTop: 8, maxWidth: 340, marginBottom: 0 }}>Boi się wagi i śliskiej podłogi.<br />Ważymy na kocu, nie na wadze.</p>
-            <Stamp ink style={{ right: 28, bottom: 28 }}>SZCZEPIONA 03/2026</Stamp>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 16, marginTop: 20 }}>
+              <div><span className="m" style={{ display: 'block' }}>Uwagi</span>
+                <p className="note" style={{ marginTop: 8, maxWidth: 340, marginBottom: 0 }}>Boi się wagi i śliskiej podłogi.<br />Ważymy na kocu, nie na wadze.</p></div>
+              <Stamp ink style={{ position: 'relative', flex: 'none', width: 100, height: 100, fontSize: 11, marginBottom: -6 }}>SZCZEPIONA 03/2026</Stamp>
+            </div>
           </KCard>
         </div>
       </div></section>
@@ -64,7 +67,7 @@ export default function Home() {
           <div style={{ maxWidth: 460 }}><p className="lead">Kiedy pacjent wychodzi, jego karta trafia na tę tablicę z pieczątką. Opiekun może dopisać jedno zdanie. Zostaje tu do północy.</p>
             <div className="row" style={{ marginTop: 20, gap: 32 }}><div><span className="m">W tym roku wypisanych</span><b className="h2" style={{ display: 'block' }}>6 412</b></div><div><span className="m">W klinice teraz</span><b className="h2" style={{ display: 'block', color: 'var(--ochre)' }}>11</b></div></div></div>
         </div>
-        <div className="board">
+        <BoardScroll>
           {DISCHARGED.map(([n, g, w, d, q, st, rot], i) => (
             <article className="pin rv" key={n} style={{ transform: `rotate(${rot}deg)`, background: 'var(--card)' }}>
               <span className="m" style={{ fontSize: 10 }}>NR {4100 + i * 37}</span>
@@ -74,8 +77,8 @@ export default function Home() {
               <Stamp ink={i % 2 === 1}>{st}</Stamp>
             </article>
           ))}
-        </div>
-        <p className="note rv" style={{ color: 'var(--grey)', fontSize: 18, marginTop: 8 }}>Przewiń tablicę w bok →  Pożegnania nie trafiają na tablicę. Dla nich jest osobna, cicha strona.</p>
+        </BoardScroll>
+        <p className="note rv" style={{ color: 'var(--grey)', fontSize: 18, marginTop: 8 }}>Pożegnania nie trafiają na tablicę. Dla nich jest osobna, cicha strona.</p>
       </div></section>
 
       <section className="sec dark" style={{ borderTop: '8px solid var(--red)' }}><div className="wrap g2" style={{ alignItems: 'start' }}>
@@ -98,8 +101,10 @@ export default function Home() {
       <section className="sec"><div className="wrap">
         <div className="head rv"><div><p className="m">05 · Zespół</p><h2>Lekarze, którzy<br /><em>pamiętają imiona.</em></h2></div><a className="btn b-line" href={href('/zespol/')}>Cały zespół →</a></div>
         <div className="g4 team4">{TEAM.slice(0, 4).map((t, i) => (
-          <KCard key={t.name} tab={`LEKARZ · 0${i + 1}`} color={t.color} className="rv" bodyStyle={{ padding: 18 }}>
-            <Img n={t.img} alt={`Portret: ${t.name}`} ratio="4/5" /><h3 style={{ marginTop: 16, fontSize: 24 }}>{t.name}</h3><p className="m" style={{ fontSize: 10, margin: '6px 0 10px' }}>{t.role}</p><p className="note" style={{ fontSize: 18 }}>lubi: {t.like}</p>
+          <KCard key={t.name} tab={`LEKARZ · 0${i + 1} · ${t.since.toUpperCase()}`} color={t.color} className="rv" bodyStyle={{ padding: 10 }}>
+            <Img n={t.img} alt={`Portret: ${t.name}`} ratio="4/5" />
+            <div style={{ padding: '4px 8px 6px' }}><h3>{t.name}</h3><p className="m" style={{ fontSize: 10, margin: '4px 0 8px' }}>{t.role}</p>
+              <p className="note" style={{ fontSize: 17, margin: 0 }}>lubi: {t.like}<br /><span style={{ color: 'var(--grey)' }}>boi się: {t.fear}</span></p></div>
           </KCard>
         ))}</div>
       </div></section>
