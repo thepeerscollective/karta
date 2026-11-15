@@ -1,4 +1,5 @@
 'use client';
+import Lang from '@/components/Lang';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { ADDRESS, HOURS, MAIL, PHONE, href } from '@/lib/base';
@@ -21,6 +22,7 @@ export function Header() {
       <header className={`nav${open ? ' open' : ''}`}><div className="wrap">
         <a className="logo" href={href('/')} aria-label="Karta, strona główna"><b>Karta</b><span>KLINIKA WETERYNARYJNA · KRAKÓW · OD 1998</span></a>
         <nav aria-label="Główna"><ul>{NAV.map(([p, l]) => <li key={p}><a className={p === '/pilne/' ? 'urgent' : undefined} href={href(p)} aria-current={path.startsWith(p.slice(0, -1)) ? 'page' : undefined}>{l}</a></li>)}</ul></nav>
+        <Lang />
         <a className="btn b-ink" href={href('/kontakt/#wizyta')}>Umów wizytę</a>
         <button className="burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /></button>
       </div></header>

@@ -24,7 +24,7 @@ export default function NewPatient() {
     <div className="g2" style={{ alignItems: 'start' }}>
       <KCard tab="NOWY PACJENT · KROK 2 Z 4 · CHARAKTER" className="rv in">
         {sent ? (
-          <div style={{ padding: 'clamp(10px,4.44vh,40px) 0' }}><h3>Karta {name} założona.</h3><p style={{ color: 'var(--grey)', margin: '12px 0 24px' }}>Lekarz przeczyta ją przed wizytą. Teraz wybierz termin.</p><a className="btn b-ink" href={href('/kontakt/#wizyta')}>Wybierz termin →</a></div>
+          <div style={{ padding: 'clamp(10px,4.44vh,40px) 0' }}><h3>{`Karta ${name} założona.`}</h3><p style={{ color: 'var(--grey)', margin: '12px 0 24px' }}>Lekarz przeczyta ją przed wizytą. Teraz wybierz termin.</p><a className="btn b-ink" href={href('/kontakt/#wizyta')}>Wybierz termin →</a></div>
         ) : (
           <form onSubmit={e => { e.preventDefault(); setSent(true); }} style={{ display: 'grid', gap: 22 }}>
             <div className="g2" style={{ gap: 16 }}>

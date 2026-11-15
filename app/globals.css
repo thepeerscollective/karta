@@ -259,3 +259,11 @@ h2,.h2{font-size:clamp(26px,min(3.5vw,6.8vh),56px)}
 .team4{gap:clamp(12px,1.6vw,22px)}
 .team4 .ph{height:calc(100svh - 120px - 330px)!important;min-height:200px;max-height:380px!important}
 .team4 h3{font-size:clamp(19px,2.6vh,23px)!important;margin-top:10px!important}
+
+/* PL / EN switch */
+.lang{margin:0 8px;display:inline-flex;align-items:center;gap:3px;font-size:12px;letter-spacing:.06em;font-weight:600;white-space:nowrap}
+.lang button{background:none;border:0;padding:6px 3px;cursor:pointer;color:inherit;opacity:.45;font:inherit;letter-spacing:inherit;transition:opacity .15s}
+.lang button:hover{opacity:.8}
+.lang button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.lang>span{opacity:.35}
+html.tr body{visibility:hidden}
