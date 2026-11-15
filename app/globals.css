@@ -267,3 +267,6 @@ h2,.h2{font-size:clamp(26px,min(3.5vw,6.8vh),56px)}
 .lang button[aria-pressed="true"]{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 .lang>span{opacity:.35}
 html.tr body{visibility:hidden}
+
+@media (max-width:640px){header .logo>span{display:none}}
+@media (max-width:640px){.bar24 .wrap>span{display:none}.bar24 .wrap{justify-content:center}}
