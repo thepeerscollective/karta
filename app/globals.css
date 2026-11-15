@@ -168,3 +168,29 @@ body.calm .nav{background:rgba(239,234,225,.94)}
   .cal{grid-template-columns:repeat(4,1fr)}
   .stamp{width:96px;height:96px;font-size:10px}
 }
+
+/* fit: no dead space under the menu, hero = one screen */
+.nav .wrap{height:72px}
+main>section:first-child{padding-top:clamp(24px,4vh,48px)}
+.sec{padding:clamp(48px,9vh,112px) 0}
+.hero{padding:clamp(24px,4vh,48px) 0 clamp(32px,6vh,64px)}
+.hero:has(.stack,.ph){min-height:calc(100svh - 113px);display:flex;align-items:center;padding:clamp(16px,3vh,32px) 0}
+.hero:has(.stack,.ph)>.wrap{width:100%;align-items:center!important}
+.hero h1{font-size:clamp(40px,min(5.6vw,10vh),92px);margin-bottom:clamp(14px,2.6vh,28px)}
+.hero .hero-cta{margin:clamp(18px,3.4vh,36px) 0 clamp(18px,3.6vh,40px)}
+.stack{min-height:0}
+.person .ph,.team .ph{max-height:56vh}
+@media (max-width:760px){.hero{min-height:0}}
+
+/* motion: cards dealt onto the desk, not faded */
+.rv{opacity:0;transform:translateY(-34px) rotate(-1.6deg);transition:opacity .25s ease,transform .75s cubic-bezier(.25,1.45,.45,1)}
+.rv:nth-child(2n){transform:translateY(-34px) rotate(1.4deg)}
+.rv:nth-child(2){transition-delay:.08s}.rv:nth-child(3){transition-delay:.16s}.rv:nth-child(4){transition-delay:.24s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv,.rv:nth-child(2n){opacity:1;transform:none;transition:none}}
+.stack .front .ph{aspect-ratio:auto!important;height:min(260px,34vh)}
+@media (max-height:800px) and (min-width:761px){
+  .free-slots a{padding:8px 14px;display:flex;gap:10px;align-items:baseline}.free-slots b{font-size:20px}
+  .stack .front .note{font-size:20px;line-height:1.35}
+  .hero .lead{font-size:16px}
+}

@@ -6,29 +6,27 @@ export default function Home() {
   return (
     <>
       <section className="hero"><div className="wrap g2" style={{ alignItems: 'start' }}>
-        <div className="rv in" style={{ paddingTop: 40 }}>
+        <div className="rv in">
           <p className="m">Klinika weterynaryjna · Podgórze · od 1998</p>
           <h1>Każdy pacjent<br /><em>ma swoją kartę.</em></h1>
           <p className="lead">Nie numer w kolejce, tylko imię, charakter i historia. Zapisujemy, że Fasola boi się wagi, a Pan Kot nie lubi transportera, i pamiętamy o tym przy każdej wizycie.</p>
-          <div className="row" style={{ margin: '36px 0 44px' }}><a className="btn b-ink" href={href('/kontakt/#wizyta')}>Umów wizytę</a><a className="btn b-line" href={href('/nowy-pacjent/')}>Załóż kartę nowego pacjenta</a></div>
+          <div className="row hero-cta"><a className="btn b-ink" href={href('/kontakt/#wizyta')}>Umów wizytę</a><a className="btn b-line" href={href('/nowy-pacjent/')}>Załóż kartę nowego pacjenta</a></div>
           <p className="m">Dziś wolne terminy</p>
           <div className="free-slots">{[['14:30', 'dr Nowak'], ['16:00', 'dr Wiśniewska'], ['18:15', 'dr Zając']].map(([t, d]) => <a key={t} href={href('/kontakt/#wizyta')}><b>{t}</b><span className="m">{d}</span></a>)}</div>
         </div>
         <div className="stack rv in">
-          <KCard tab="NR KARTY 2207" color="sage" className="back"><div style={{ height: 560 }} /></KCard>
+          <KCard tab="NR KARTY 2207" color="sage" className="back"><div style={{ height: 420 }} /></KCard>
           <KCard tab="NR KARTY 0412 · FASOLA" className="front">
-            <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', gap: 24 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'min(220px, 30vh) 1fr', gap: 24 }}>
               <Img n="v01" alt="Pies Fasola na kocu" ratio="220/260" eager />
               <div style={{ display: 'grid', gap: 14, alignContent: 'start' }}>
                 <Field k="Imię" v="Fasola" size={34} /><Field k="Gatunek / rasa" v="pies, mieszaniec" size={22} />
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}><Field k="Wiek" v="7 lat" size={22} /><Field k="Waga" v="11,4 kg" size={22} /></div>
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, margin: '24px 0' }}><Field k="Opiekun" v="Ola Krawiec" size={22} /><Field k="Lekarz prowadzący" v="dr Marta Nowak" size={22} /></div>
-            <span className="m">Uwagi</span>
-            <p className="note" style={{ marginTop: 8, maxWidth: 340 }}>Boi się wagi i śliskiej podłogi.<br />Ważymy na kocu, nie na wadze.<br />Uwielbia suszoną wątróbkę.</p>
-            <Stamp ink style={{ right: 28, bottom: 64 }}>SZCZEPIONA 03/2026</Stamp>
-            <p className="m" style={{ marginTop: 24, fontSize: 10 }}>Ostatnia wizyta 12.10.2026 · następna: szczepienie 03.2027</p>
+                        <span className="m" style={{ display: 'block', marginTop: 20 }}>Uwagi</span>
+            <p className="note" style={{ marginTop: 8, maxWidth: 340, marginBottom: 0 }}>Boi się wagi i śliskiej podłogi.<br />Ważymy na kocu, nie na wadze.</p>
+            <Stamp ink style={{ right: 28, bottom: 28 }}>SZCZEPIONA 03/2026</Stamp>
           </KCard>
         </div>
       </div></section>
