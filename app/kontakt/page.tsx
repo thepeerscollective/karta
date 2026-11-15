@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <>
       <section className="hero"><div className="wrap">
-        <div className="g2" style={{ alignItems: 'end', marginBottom: 56 }}><div className="rv in"><p className="m">Kontakt · rezerwacja</p><h1>Umów wizytę<br /><em>w dwóch kartach.</em></h1></div><p className="lead rv in">Wybierz pacjenta i termin. Jeśli to nagły przypadek, nie rezerwuj, tylko dzwoń: {PHONE}.</p></div>
+        <div className="g2" style={{ alignItems: 'end', marginBottom: 'clamp(10px,6.22vh,56px)' }}><div className="rv in"><p className="m">Kontakt · rezerwacja</p><h1>Umów wizytę<br /><em>w dwóch kartach.</em></h1></div><p className="lead rv in">Wybierz pacjenta i termin. Jeśli to nagły przypadek, nie rezerwuj, tylko dzwoń: {PHONE}.</p></div>
         <VetBooking />
       </div></section>
       <section className="sec" style={{ background: 'var(--blue)' }}><div className="wrap g2" style={{ alignItems: 'start' }}>

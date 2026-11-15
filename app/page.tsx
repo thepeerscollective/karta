@@ -31,13 +31,13 @@ export default function Home() {
         </div>
       </div></section>
 
-      <section className="dark" style={{ padding: '64px 0' }}><div className="wrap stats">
+      <section className="dark" style={{ padding: 'clamp(10px,7.11vh,64px) 0' }}><div className="wrap stats">
         {[['1998', 'od tego roku prowadzimy karty'], ['24/7', 'dyżur, także w święta'], ['14', 'lekarzy, 6 specjalizacji'], ['38 214', 'kart pacjentów w archiwum']].map(([a, b]) => <div className="rv" key={a}><b>{a}</b><span className="m" style={{ display: 'block', marginTop: 12 }}>{b}</span></div>)}
       </div></section>
 
       <section className="sec"><div className="wrap">
         <div className="head rv"><div><p className="m">01 · Co robimy</p><h2>Od szczepienia<br /><em>do operacji.</em></h2></div><p className="lead">Jedna karta przechodzi z pacjentem przez wszystkie gabinety. Chirurg wie, co zapisał internista, a recepcja wie, że kot czeka w osobnej poczekalni.</p></div>
-        <div className="g3" style={{ rowGap: 48 }}>
+        <div className="g3 svc">
           {SERVICES.map((s, i) => (
             <a key={s.slug} className="rv" href={href(s.slug === 'chirurgia' ? '/uslugi/chirurgia/' : `/uslugi/#${s.slug}`)}>
               <KCard tab={`${s.code} · ${String(i + 1).padStart(2, '0')}`} color={s.color}>
@@ -52,9 +52,9 @@ export default function Home() {
       <section className="sec" style={{ background: 'var(--blue)' }}><div className="wrap g2">
         <div className="rv"><Img n="v02" alt="Lekarka bada kota na kolanach opiekunki" ratio="4/5" /></div>
         <div className="rv"><p className="m">02 · Jak traktujemy pacjentów</p><h2>Spokojnie.<br /><em>Bez stołu, jeśli się da.</em></h2>
-          <ol className="list" style={{ marginTop: 32 }}>
+          <ol className="list list2" style={{ marginTop: 'clamp(14px,3vh,32px)' }}>
             {[['Ważymy na kocu, nie na wadze.', 'Śliska waga to najczęstszy powód stresu u psów. Koc z domu załatwia sprawę.'], ['Koty czekają osobno.', 'Osobna poczekalnia i wejście. Kot nie słyszy psów, zanim wejdzie do gabinetu.'], ['Badamy tam, gdzie zwierzę czuje się pewnie.', 'Na podłodze, na kolanach opiekuna, w transporterze z otwartą górą.'], ['Najpierw mówimy, potem robimy.', 'Każdy zabieg tłumaczymy opiekunowi, zanim dotkniemy pacjenta.']].map(([h, p], i) => (
-              <li key={h}><span className="n">0{i + 1}</span><div><h3 style={{ fontSize: 24 }}>{h}</h3><p>{p}</p></div></li>
+              <li key={h}><span className="n">0{i + 1}</span><div><h3 style={{ fontSize: 21 }}>{h}</h3><p>{p}</p></div></li>
             ))}
           </ol></div>
       </div></section>
@@ -75,13 +75,13 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="note rv" style={{ color: 'var(--grey)', fontSize: 20, marginTop: 32 }}>Pożegnania nie trafiają na tablicę. Dla nich jest osobna, cicha strona.</p>
+        <p className="note rv" style={{ color: 'var(--grey)', fontSize: 18, marginTop: 8 }}>Przewiń tablicę w bok →  Pożegnania nie trafiają na tablicę. Dla nich jest osobna, cicha strona.</p>
       </div></section>
 
       <section className="sec dark" style={{ borderTop: '8px solid var(--red)' }}><div className="wrap g2" style={{ alignItems: 'start' }}>
         <div className="rv"><p className="m" style={{ color: 'var(--ochre)' }}>03 · Nagły przypadek</p><h2>Dyżur całą dobę.<br /><em style={{ color: 'var(--dim)' }}>Także w Wigilię o 3 w nocy.</em></h2>
-          <a href={`tel:${PHONE.replace(/\s/g, '')}`} className="h1" style={{ display: 'block', color: 'var(--red)', margin: '40px 0 8px' }}>{PHONE}</a><p className="m">Dzwoń z drogi · zapiszemy pacjenta, zanim dojedziesz</p>
-          <div className="row" style={{ marginTop: 32 }}><a className="btn b-red" href={href('/pilne/')}>Co zrobić, zanim przyjedziesz</a><a className="btn b-line" href="https://maps.google.com/?q=Rydl%C3%B3wka+20+Krak%C3%B3w">Trasa na Rydlówkę</a></div></div>
+          <a href={`tel:${PHONE.replace(/\s/g, '')}`} className="h1 tel-big" style={{ display: 'block', color: 'var(--red)' }}>{PHONE}</a><p className="m">Dzwoń z drogi · zapiszemy pacjenta, zanim dojedziesz</p>
+          <div className="row" style={{ marginTop: 'clamp(16px,3vh,32px)' }}><a className="btn b-red" href={href('/pilne/')}>Co zrobić, zanim przyjedziesz</a><a className="btn b-line" href="https://maps.google.com/?q=Rydl%C3%B3wka+20+Krak%C3%B3w">Trasa na Rydlówkę</a></div></div>
         <KCard tab="KARTA PILNA · KROK PO KROKU" color="red" className="rv" bodyStyle={{ color: 'var(--ink)' }}>
           <ol className="list">{[['Zadzwoń z drogi.', 'Powiedz, co się stało i ile waży zwierzę. Przygotujemy leki i stół.'], ['Nie podawaj ludzkich leków.', 'Paracetamol i ibuprofen są dla psów i kotów trujące.'], ['Zabierz opakowanie.', 'Jeśli zjadł coś trującego, weź etykietę albo resztkę ze sobą.'], ['Transport płasko.', 'Duży pies na kocu trzymanym przez dwie osoby, kot w transporterze.']].map(([h, p], i) => <li key={h}><span className="n">0{i + 1}</span><div><h3 style={{ fontSize: 22 }}>{h}</h3><p>{p}</p></div></li>)}</ol>
         </KCard>
@@ -91,13 +91,13 @@ export default function Home() {
         <div className="rv"><p className="m">04 · Kiedy trzeba się pożegnać</p><h2>Na koniec też<br /><em>jesteśmy obok.</em></h2>
           <p className="lead" style={{ margin: '24px 0' }}>Rozmawiamy o tym spokojnie i bez pośpiechu. Osobny pokój z kanapą, wejście od ogrodu, możliwość wizyty domowej. Pomagamy w kremacji i odcisku łapy na pamiątkę.</p>
           <p className="note" style={{ color: 'var(--grey)' }}>Zadzwoń na numer recepcji i powiedz tylko „chodzi o pożegnanie”. Resztą zajmiemy się my.</p>
-          <a className="btn b-line" style={{ marginTop: 28 }} href={href('/pozegnanie/')}>Przeczytaj, jak to wygląda</a></div>
+          <a className="btn b-line" style={{ marginTop: 'clamp(10px,3.11vh,28px)' }} href={href('/pozegnanie/')}>Przeczytaj, jak to wygląda</a></div>
         <div className="rv"><Img n="v03" alt="Dłoń opiekuna na łapie starego psa" ratio="5/4" /></div>
       </div></section>
 
       <section className="sec"><div className="wrap">
         <div className="head rv"><div><p className="m">05 · Zespół</p><h2>Lekarze, którzy<br /><em>pamiętają imiona.</em></h2></div><a className="btn b-line" href={href('/zespol/')}>Cały zespół →</a></div>
-        <div className="g4">{TEAM.slice(0, 4).map((t, i) => (
+        <div className="g4 team4">{TEAM.slice(0, 4).map((t, i) => (
           <KCard key={t.name} tab={`LEKARZ · 0${i + 1}`} color={t.color} className="rv" bodyStyle={{ padding: 18 }}>
             <Img n={t.img} alt={`Portret: ${t.name}`} ratio="4/5" /><h3 style={{ marginTop: 16, fontSize: 24 }}>{t.name}</h3><p className="m" style={{ fontSize: 10, margin: '6px 0 10px' }}>{t.role}</p><p className="note" style={{ fontSize: 18 }}>lubi: {t.like}</p>
           </KCard>

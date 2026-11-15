@@ -20,7 +20,7 @@ export default function VetBooking() {
   return (
     <div className="g2" style={{ alignItems: 'start' }} id="wizyta">
       <KCard tab="REZERWACJA · TERMIN" className="rv">
-        {done ? <div style={{ padding: '32px 0' }}><h3>Zapisane.</h3><p style={{ color: 'var(--grey)', margin: '10px 0' }}>{PETS[pet][0].split(' · ')[0]} · {d && `${D[d.getDay()]} ${d.getDate()}.${d.getMonth() + 1}`} · {hour}. Przypomnimy SMS-em dzień wcześniej.</p></div> : (
+        {done ? <div style={{ padding: 'clamp(10px,3.56vh,32px) 0' }}><h3>Zapisane.</h3><p style={{ color: 'var(--grey)', margin: '10px 0' }}>{PETS[pet][0].split(' · ')[0]} · {d && `${D[d.getDay()]} ${d.getDate()}.${d.getMonth() + 1}`} · {hour}. Przypomnimy SMS-em dzień wcześniej.</p></div> : (
           <div style={{ display: 'grid', gap: 24 }}>
             <div><span className="lbl">Pacjent</span><div className="chips">{PETS.map(([p], i) => <button key={p} className="chip" aria-pressed={pet === i} onClick={() => setPet(i)}>{p}</button>)}</div></div>
             <div><span className="lbl">Powód</span><div className="chips">{REASONS.map(([r], i) => <button key={r} className="chip" aria-pressed={reason === i} onClick={() => setReason(i)}>{r}</button>)}</div></div>

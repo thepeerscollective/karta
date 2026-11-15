@@ -17,7 +17,7 @@ export default function Team() {
           </KCard>
         ))}
       </div></section>
-      <section className="sec" style={{ background: 'var(--blue)' }}><div className="wrap"><div className="rv" style={{ marginBottom: 40 }}><p className="m">Technicy i recepcja</p><h2>Ludzie, którzy trzymają<br /><em>łapę podczas badania.</em></h2></div><div className="rv"><Img n="v10" alt="Zespół techników i recepcji przed kliniką z psami" ratio="21/9" /></div></div></section>
+      <section className="sec" style={{ background: 'var(--blue)' }}><div className="wrap"><div className="rv" style={{ marginBottom: 'clamp(10px,4.44vh,40px)' }}><p className="m">Technicy i recepcja</p><h2>Ludzie, którzy trzymają<br /><em>łapę podczas badania.</em></h2></div><div className="rv"><Img n="v10" alt="Zespół techników i recepcji przed kliniką z psami" ratio="21/9" /></div></div></section>
       <section className="sec" id="praca"><div className="wrap"><KCard tab="KARIERA · OTWARTE KARTY" className="rv"><div className="g2"><div><h2 className="h3" style={{ fontSize: 40 }}>Szukamy lekarza na dyżury nocne</h2><p style={{ color: 'var(--grey)', marginTop: 12 }}>Grafik 7 nocy w miesiącu, dodatek nocny, pełne zaplecze, zawsze dwie osoby na dyżurze. Nie pracujesz sam.</p></div><div className="row"><a className="btn b-ink" href="mailto:praca@karta.vet">Wyślij swoją kartę</a><a className="btn b-line" href="mailto:praca@karta.vet?subject=Technik%20weterynarii">Technik weterynarii</a></div></div></KCard></div></section>
     </>
   );
